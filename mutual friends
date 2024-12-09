@@ -36,7 +36,18 @@ output:
   dinesh
 -------------
 
+#find how many mutual friends are there
+select  distinct f1.frd_name as mutual_friend
+from friends f1
+join friends f2
+on f1.frd_name = f2.frd_name
+where f1.name !=f2.name;
 
+output:
+--------------
+  karthik
+  dinesh
+--------------
 
 
 
