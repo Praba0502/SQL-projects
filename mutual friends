@@ -1,0 +1,51 @@
+#find the mutual friend from the given table
+
+#create table
+create table friends(id int, name varchar(50), frd_name varchar(50));
+insert into friends
+values(1, 'arun','bala'),
+(2,'arun','karthik'),
+(3,'bala','karthik'),
+(4,'bala','dinesh'),
+(5,'karthik','dinesh'),
+(6,'dinesh','ravi');
+
+select f1.frd_name as mutual_friend
+from friends f1
+join friends f2
+on f1.frd_name = f2.frd_name
+where f1.name !=f2.name
+and f1.name='arun'
+and f2.name='bala';
+
+output:
+----------
+ karthik
+----------
+
+select f1.frd_name as mutual_friend
+from friends f1
+join friends f2
+on f1.frd_name = f2.frd_name
+where f1.name !=f2.name
+and f1.name='bala'
+and f2.name='karthik';
+
+output:
+--------------
+  dinesh
+-------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
